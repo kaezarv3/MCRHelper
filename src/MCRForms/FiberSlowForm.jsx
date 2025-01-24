@@ -7,7 +7,6 @@ import { Field } from "@/components/ui/field"
 const FiberSlowSpeeds = ({resetSelection}) => {
     const handleCopyToClipboard = () => {
         const message = `
-Notes: 
 ${document.getElementsByName('notes')[0]?.value}
 
 Contact Name: ${document.getElementsByName('name')[0].value}
@@ -34,38 +33,38 @@ Try Iperf (if supported by the terminating ACD device)?: ${document.getElementsB
     };
 
     return (
-        <AbsoluteCenter>
-            <Stack>
-                <Box maxW="xl" padding='1.2rem'>
-                    <Fieldset.Root size="lg" invalid>
+        <AbsoluteCenter minWidth={'85%'}>
+        <Stack width={'100%'}>
+          <Box width='100%' borderWidth="1px" padding="1.2rem" maxH="80vh" overflowY="auto">
+                    <Fieldset.Root size="sm" invalid>
                         <Fieldset.Content>
-                            <Field label="Notes" orientation="horizontal">
+                            <Field label="Notes" orientation="vertical">
                                 <Textarea name="notes" />
                             </Field>
-                            <Field label="Contact Name:" orientation="horizontal">
+                            <Field label="Contact Name:" orientation="vertical">
                                 <Input name="name" />
                             </Field>
-                            <Field label="Contact Number:" orientation="horizontal">
+                            <Field label="Contact Number:" orientation="vertical">
                                 <Input name="number" />
                             </Field>
-                            <Field label="Access Hours" orientation="horizontal">
+                            <Field label="Access Hours" orientation="vertical">
                                 <Input name="Access Hours"/>
                             </Field>
-                            <Field label="Problem/Request Description" orientation="horizontal">
+                            <Field label="Problem/Request Description" orientation="vertical">
                                 <Textarea name="Problem"/>
                             </Field>
                             <Checkbox>TRF Policy Approval</Checkbox>
                             <Checkbox>Are interface errors actively building?</Checkbox>
                             <Checkbox>Does the graphing indicate saturation?</Checkbox>
-                            <Field label="Negotiated speed/duplex" orientation="horizontal">
+                            <Field label="Negotiated speed/duplex" orientation="vertical">
                                 <Input name="Negotiated speed/duplex" />
                             </Field>
                             <Checkbox>Were the speed tests to an ACD server speed test server?</Checkbox>
-                            <Field label="Slow destinations" orientation="horizontal">
+                            <Field label="Slow destinations" orientation="vertical">
                                 <Textarea name="Slow destinations"/>
                             </Field>
                             <Checkbox>Verified customer CPU is not maxing out during test?</Checkbox>
-                            <Field label="Connection type" orientation="horizontal">
+                            <Field label="Connection type" orientation="vertical">
                                 <Input name="Connection type"/>
                             </Field>
                             <Checkbox>Are pings clean to the ACD modem/router/switch?</Checkbox>

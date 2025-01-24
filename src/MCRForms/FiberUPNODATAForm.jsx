@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 const FiberUPNODATAForm = ({ resetSelection }) => {
     const handleCopyToClipboard = () => {
         const message = `
-Notes: 
 ${document.getElementsByName('notes')[0]?.value}
 
 Contact Name: ${document.getElementsByName('name')[0].value}
@@ -30,34 +29,34 @@ Customer Equipment Bypassed?: ${document.getElementsByName('Bypassed equipment')
     };
 
     return (
-        <AbsoluteCenter>
-            <Stack>
-                <Box maxW="xl" borderWidth="1px" padding='1.2rem'>
-                    <Fieldset.Root size="lg" invalid>
+        <AbsoluteCenter minWidth={'85%'}>
+        <Stack width={'100%'}>
+          <Box width='100%' borderWidth="1px" padding="1.2rem" maxH="80vh" overflowY="auto">
+                    <Fieldset.Root size="md" invalid>
                         <Fieldset.Content>
-                            <Field label="Notes" orientation="horizontal">
+                            <Field label="Notes" orientation="vertical">
                                 <Textarea name="notes" />
                             </Field>
-                            <Field label="Contact Name:" orientation="horizontal">
+                            <Field label="Contact Name:" orientation="vertical">
                                 <Input name="name" />
                             </Field>
-                            <Field label="Contact Number:" orientation="horizontal">
+                            <Field label="Contact Number:" orientation="vertical">
                                 <Input name="number" />
                             </Field>
-                            <Field label="Access Hours" orientation="horizontal">
+                            <Field label="Access Hours" orientation="vertical">
                                 <Input name="Access Hours" />
                             </Field>
-                            <Field label="Problem/Request Description" orientation="horizontal">
+                            <Field label="Problem/Request Description" orientation="vertical">
                                 <Textarea name="Problem" />
                             </Field>
                             <Checkbox>TRF Policy Approval</Checkbox>
                             <Checkbox>CPE accessible?</Checkbox>
                             <Checkbox>Does the graphing indicate saturation?</Checkbox>
-                            <Field label="Negotiated speed/duplex" orientation="horizontal">
+                            <Field label="Negotiated speed/duplex" orientation="vertical">
                                 <Input name="Negotiated speed/duplex" />
                             </Field>
                             <Checkbox>Is customer equipment pulling IP (ARP)?</Checkbox>
-                            <Field label="Connection type" orientation="horizontal">
+                            <Field label="Connection type" orientation="vertical">
                                 <Input name="Connection type" />
                             </Field>
                             <Checkbox>Are pings clean to the ACD modem/router/switch?</Checkbox>

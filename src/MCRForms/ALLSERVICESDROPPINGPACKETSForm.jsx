@@ -5,8 +5,7 @@ import PropTypes from "prop-types";
 
 const ALLSERVICESDROPPINGPACKETSForm = ({ resetSelection }) => {
   const handleCopyToClipboard = () => {
-    const message = `
-Notes: 
+    const message = ` 
 ${document.getElementsByName('notes')[0]?.value}
 
 Contact Name: ${document.getElementsByName('name')[0]?.value}
@@ -33,30 +32,29 @@ Customer Equipment Bypassed (Assuming no impairment to ACD CPE)?: ${document.get
   };
 
   return (
-    <AbsoluteCenter>
-      <Stack>
-        <Box maxW="xl" borderWidth="1px" padding="1.2rem">
+    <AbsoluteCenter minWidth={'85%'}>
+        <Stack width={'100%'}>
+        <Box width='100%' borderWidth="1px" padding="1.2rem" maxH="80vh" overflowY="auto">
           <Fieldset.Root size="lg" invalid>
-            <Fieldset.Legend>MCR Details</Fieldset.Legend>
             <Fieldset.Content>
-              <Field label="Notes" orientation="horizontal">
+              <Field label="Notes" orientation="vertical">
                 <Textarea name="notes" />
               </Field>
-              <Field label="Contact Name:" orientation="horizontal">
+              <Field label="Contact Name:" orientation="vertical">
                 <Input name="name" />
               </Field>
-              <Field label="Contact Number:" orientation="horizontal">
+              <Field label="Contact Number:" orientation="vertical">
                 <Input name="number" />
               </Field>
-              <Field label="Access Hours" orientation="horizontal">
+              <Field label="Access Hours" orientation="vertical">
                 <Input name="Access Hours" />
               </Field>
-              <Field label="Problem/Request Description" orientation="horizontal">
+              <Field label="Problem/Request Description" orientation="vertical">
                 <Textarea name="Problem" />
               </Field>
               <Checkbox name="TRF Policy Approval">TRF Policy Approval</Checkbox>
               <Checkbox name="CPE accessible?">CPE accessible?</Checkbox>
-              <Field label="What is the actual expected service speed?" orientation="horizontal">
+              <Field label="What is the actual expected service speed?" orientation="vertical">
                 <Input name="What is the actual expected service speed?" />
               </Field>
               <Checkbox name="Does the graphing indicate saturation?">
@@ -64,7 +62,7 @@ Customer Equipment Bypassed (Assuming no impairment to ACD CPE)?: ${document.get
               </Checkbox>
               <Field
                 label="What is the negotiated speed/duplex on the router/modem's LAN port(s)?"
-                orientation="horizontal"
+                orientation="vertical"
               >
                 <Input name="What is the negotiated speed/duplex on the router/modem's LAN port(s)?" />
               </Field>
@@ -74,10 +72,10 @@ Customer Equipment Bypassed (Assuming no impairment to ACD CPE)?: ${document.get
               <Checkbox name="Dropping packets to the CPE (Router/Switch/Modem) from Metroix Data Center?">
                 Dropping packets to the CPE (Router/Switch/Modem) from Metroix Data Center?
               </Checkbox>
-              <Field label="Is packet loss to a specific destination or all hosts?" orientation="horizontal">
+              <Field label="Is packet loss to a specific destination or all hosts?" orientation="vertical">
                 <Textarea name="Is packet loss to a specific destination or all hosts?" />
               </Field>
-              <Field label="Are they connected via wireless or wired?" orientation="horizontal">
+              <Field label="Are they connected via wireless or wired?" orientation="vertical">
                 <Input name="Are they connected via wireless or wired?" />
               </Field>
               <Checkbox name="Are pings clean to the ACD modem/router/switch?">

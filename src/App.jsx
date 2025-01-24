@@ -5,7 +5,8 @@ import FiberDownForm from './MCRForms/FiberDownForm';
 import FiberSlowSpeeds from './MCRForms/FiberSlowForm';
 import FiberUPNODATAForm from './MCRForms/FiberUPNODATAForm';
 import ALLSERVICESVPNISSUESForm from './MCRForms/ALLSERVICESVPNISSUESForm';
-
+import ALLSERVICESDROPPINGPACKETSForm from './MCRForms/ALLSERVICESDROPPINGPACKETSForm';
+import WiFiConnectivityIssuesForm from './MCRForms/WIFIForm';
 
 function App() {
   return (
@@ -71,8 +72,8 @@ const MCRType = () => {
 
 const FormComponent = ({ type, resetSelection }) => {
   return (
-    <Box textAlign="center">
-      <Heading fontWeight="bold" fontSize="2xl">
+    <Box textAlign="center" >
+      <Heading fontWeight="bold" fontSize="2xl" paddingTop={'1.5rem'}>
         {type} MCR
       </Heading>
       {/* Using a switch statement to render the appropriate form */}
@@ -87,7 +88,7 @@ const FormComponent = ({ type, resetSelection }) => {
           case 'ALL SERVICES VPN ISSUES':
             return <ALLSERVICESVPNISSUESForm resetSelection={resetSelection} />;
           case 'ALL SERVICES DROPPING PACKETS':
-            return <AllServicesDroppingPacketsForm resetSelection={resetSelection} />;
+            return <ALLSERVICESDROPPINGPACKETSForm resetSelection={resetSelection} />;
           case 'WIFI CONNECTIVITY ISSUES':
             return <WiFiConnectivityIssuesForm resetSelection={resetSelection} />;
           case 'DSL Down, Bouncing, or Degraded Sync':
@@ -108,10 +109,6 @@ const FormComponent = ({ type, resetSelection }) => {
             return <IPBXLinesForm resetSelection={resetSelection} />;
           case 'Standard IP Based MPLS':
             return <StandardIPBasedMPLSForm resetSelection={resetSelection} />;
-          
-          // Add cases for other types as they are implemented
-          default:
-            return <Box mb={4}>Select a form type from the buttons</Box>;
         }
       })()}
     </Box>
