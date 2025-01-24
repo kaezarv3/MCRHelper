@@ -40,11 +40,11 @@ Have you performed an NI check? ${document.getElementsByName('8')[0]?.checked ? 
               <SmallField label="Contact Number:" name="number" />
               <SmallField label="Access Hours:" name="Access Hours" />
               <BigField label="Problem/Request Description:" name="Problem" />
-              <CustomCheckbox name="TRF Policy Approval">TRF Policy Approval</CustomCheckbox>
               <SmallField label="Circuit ID:" name="Circuit ID" />
               <SmallField label="Circuit Address:" name="Circuit Address" />
               <SmallField label="Circuit CFA (cable x pair):" name="Circuit CFA" />
-              <BigField label="What is the administrative status of the assigned DSLAM/MXK port?" name="1" />
+              <BigField label="What is the administrative status of the assigned DSLAM/MXK port?" name="1"/>
+              <CustomCheckbox name="TRF Policy Approval" text="TRF Policy Approval"></CustomCheckbox>
               <CustomCheckbox name="2" text="Does the ACD modem have power?"></CustomCheckbox>
               <CustomCheckbox name="3" text="If applicable, is the modem's power button pressed?"></CustomCheckbox>
               <CustomCheckbox name="4" text="Are physical connections to the ACD modem secure and cables in good physical condition?"></CustomCheckbox>

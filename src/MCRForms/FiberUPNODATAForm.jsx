@@ -1,26 +1,26 @@
 import { Fieldset, Input, Textarea, Box, AbsoluteCenter, Button, Stack } from "@chakra-ui/react"; 
-import { Checkbox } from "@/components/ui/checkbox";
 import { Field } from "@/components/ui/field";
 import PropTypes from 'prop-types'; 
+import CustomCheckbox from "@/components/ui/CustomCheckbox";
 
 const FiberUPNODATAForm = ({ resetSelection }) => {
     const handleCopyToClipboard = () => {
         const message = `
 ${document.getElementsByName('notes')[0]?.value}
 
-Contact Name: ${document.getElementsByName('name')[0].value}
-Contact Number: ${document.getElementsByName('number')[0].value}
-Access Hours: ${document.getElementsByName('Access Hours')[0].value}
-Problem/Request Description: ${document.getElementsByName('Problem')[0].value}
-TRF Policy Approval: ${document.getElementsByName('TRF Policy Approval')[0]?.checked ? 'Yes' : 'No'}
-CPE accessible?: ${document.getElementsByName('CPE accessible?')[0]?.checked ? 'Yes' : 'No'}
-Does the graphing indicate saturation?: ${document.getElementsByName('Does the graphing indicate saturation?')[0]?.checked ? 'Yes' : 'No'}
-Negotiated speed/duplex on the router/modem's LAN port(s): ${document.getElementsByName('Negotiated speed/duplex')[0]?.value}
-Is customer equipment pulling IP (ARP)?: ${document.getElementsByName('Pulling IP ARP')[0]?.checked ? 'Yes' : 'No'}
-Connection type (wireless or wired): ${document.getElementsByName('Connection type')[0]?.value}
-Are pings clean to the ACD modem/router/switch?: ${document.getElementsByName('Ping to ACD device')[0]?.checked ? 'Yes' : 'No'}
-Can the customer device be pinged? (If Yes, are the results clean?): ${document.getElementsByName('Customer device ping')[0]?.checked ? 'Yes' : 'No'}
-Customer Equipment Bypassed?: ${document.getElementsByName('Bypassed equipment')[0]?.checked ? 'Yes' : 'No'}
+Contact Name: ${document.getElementsByName('1')[0].value}
+Contact Number: ${document.getElementsByName('2')[0].value}
+Access Hours: ${document.getElementsByName('3')[0].value}
+Problem/Request Description: ${document.getElementsByName('4')[0].value}
+TRF Policy Approval: ${document.getElementsByName('5')[0]?.checked ? 'Yes' : 'No'}
+CPE accessible?: ${document.getElementsByName('6')[0]?.checked ? 'Yes' : 'No'}
+Does the graphing indicate saturation?: ${document.getElementsByName('7')[0]?.checked ? 'Yes' : 'No'}
+Negotiated speed/duplex on the router/modem's LAN port(s): ${document.getElementsByName('8')[0]?.value}
+Is customer equipment pulling IP (ARP)?: ${document.getElementsByName('9')[0]?.checked ? 'Yes' : 'No'}
+Connection type (wireless or wired): ${document.getElementsByName('10')[0]?.value}
+Are pings clean to the ACD modem/router/switch?: ${document.getElementsByName('11')[0]?.checked ? 'Yes' : 'No'}
+Can the customer device be pinged? (If Yes, are the results clean?): ${document.getElementsByName('12')[0]?.checked ? 'Yes' : 'No'}
+Customer Equipment Bypassed?: ${document.getElementsByName('13')[0]?.checked ? 'Yes' : 'No'}
         `;
 
         navigator.clipboard.writeText(message)
@@ -38,30 +38,30 @@ Customer Equipment Bypassed?: ${document.getElementsByName('Bypassed equipment')
                                 <Textarea name="notes" />
                             </Field>
                             <Field label="Contact Name:" orientation="vertical">
-                                <Input name="name" />
+                                <Input name="1" />
                             </Field>
                             <Field label="Contact Number:" orientation="vertical">
-                                <Input name="number" />
+                                <Input name="2" />
                             </Field>
                             <Field label="Access Hours" orientation="vertical">
-                                <Input name="Access Hours" />
+                                <Input name="3" />
                             </Field>
                             <Field label="Problem/Request Description" orientation="vertical">
-                                <Textarea name="Problem" />
+                                <Textarea name="4" />
                             </Field>
-                            <Checkbox>TRF Policy Approval</Checkbox>
-                            <Checkbox>CPE accessible?</Checkbox>
-                            <Checkbox>Does the graphing indicate saturation?</Checkbox>
+                            <CustomCheckbox name='5' text="TRF Policy Approval"></CustomCheckbox>
+                            <CustomCheckbox name='6'text="CPE accessible?"></CustomCheckbox>
+                            <CustomCheckbox name='7'text="Does the graphing indicate saturation?"></CustomCheckbox>
                             <Field label="Negotiated speed/duplex" orientation="vertical">
-                                <Input name="Negotiated speed/duplex" />
+                                <Input name="8" />
                             </Field>
-                            <Checkbox>Is customer equipment pulling IP (ARP)?</Checkbox>
+                            <CustomCheckbox name='9' text="Is customer equipment pulling IP (ARP)?"></CustomCheckbox>
                             <Field label="Connection type" orientation="vertical">
-                                <Input name="Connection type" />
+                                <Input name="10" />
                             </Field>
-                            <Checkbox>Are pings clean to the ACD modem/router/switch?</Checkbox>
-                            <Checkbox>Can the customer device be pinged? (If Yes, are the results clean?)</Checkbox>
-                            <Checkbox>Customer Equipment Bypassed?</Checkbox>
+                            <CustomCheckbox name='11' text="Are pings clean to the ACD modem/router/switch?"></CustomCheckbox>
+                            <CustomCheckbox name='12' text="Can the customer device be pinged? (If Yes, are the results clean?)"></CustomCheckbox>
+                            <CustomCheckbox name='13' text="Customer Equipment Bypassed?"></CustomCheckbox>
                         </Fieldset.Content>
                     </Fieldset.Root>
                 </Box>
