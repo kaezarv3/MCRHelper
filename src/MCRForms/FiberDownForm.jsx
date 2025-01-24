@@ -34,19 +34,19 @@ Are there recent CO log events? ${document.getElementsByName('7')[0]?.checked ? 
         <Box width='100%' borderWidth="1px" padding="1.2rem" maxH="80vh" overflowY="auto">
     <Fieldset.Root size="lg" invalid>
       <Fieldset.Content>
-      <Field label="Notes" orientation="horizontal">
+      <Field label="Notes" orientation="vertical">
           <Textarea name="notes" />
         </Field>
-        <Field label="Contact Name:" orientation="horizontal">
+        <Field label="Contact Name:" orientation="vertical">
           <Input name="name" />
         </Field>
-        <Field label="Contact Number:" orientation="horizontal">
+        <Field label="Contact Number:" orientation="vertical">
           <Input name="number" />
         </Field>
-        <Field label="Access Hours" orientation="horizontal">
+        <Field label="Access Hours" orientation="vertical">
             <Input name="Access Hours"/>
         </Field>
-        <Field label="Problem/Request Description" orientation="horizontal" >
+        <Field label="Problem/Request Description" orientation="vertical" >
             <Textarea name="Problem"/>
         </Field>
         <Checkbox name='1'>TRF Policy Approval</Checkbox>

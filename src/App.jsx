@@ -7,6 +7,15 @@ import FiberUPNODATAForm from './MCRForms/FiberUPNODATAForm';
 import ALLSERVICESVPNISSUESForm from './MCRForms/ALLSERVICESVPNISSUESForm';
 import ALLSERVICESDROPPINGPACKETSForm from './MCRForms/ALLSERVICESDROPPINGPACKETSForm';
 import WiFiConnectivityIssuesForm from './MCRForms/WIFIForm';
+import DSLDBDForm from './MCRForms/DSLDBDForm';
+import DSLSlowSpeedsForm from './MCRForms/DSLSlowSpeeds';
+import T1SlowSpeedsForm from './MCRForms/T1SlowSpeeds';
+import T1DownBouncingForm from './MCRForms/T1DownBouncing';
+import RealChoiceTVForm from './MCRForms/RealChoiceTV';
+import FXSLinesForm from './MCRForms/FXSLines';
+import POTSLinesForm from './MCRForms/POTSLines';
+import IPBXLinesForm from './MCRForms/iPBXLines';
+import OtherForms from './MCRForms/OtherMCRForms';
 
 function App() {
   return (
@@ -25,9 +34,9 @@ const MCRType = () => {
     'Fiber Down/Bouncing',
     'Fiber Slow Speeds',
     'Fiber UP/NO DATA',
-    'ALL SERVICES VPN ISSUES',
-    'ALL SERVICES DROPPING PACKETS',
-    'WIFI CONNECTIVITY ISSUES',
+    'All Services VPN Issues',
+    'All Services Dropping Packets',
+    'WiFi Connectivity Issues',
     'DSL Down, Bouncing, or Degraded Sync',
     'DSL Slow Speeds',
     'T1 Down/Bouncing',
@@ -36,7 +45,7 @@ const MCRType = () => {
     'FXS Lines',
     'POTS Lines',
     'iPBX Lines',
-    'Standard IP Based MPLS',
+    'Other Kinds of Issues',
   ];
 
   const handleSelect = (name) => {
@@ -85,14 +94,14 @@ const FormComponent = ({ type, resetSelection }) => {
             return <FiberSlowSpeeds resetSelection={resetSelection}/>;
           case 'Fiber UP/NO DATA':
             return <FiberUPNODATAForm resetSelection={resetSelection} />;
-          case 'ALL SERVICES VPN ISSUES':
+          case 'All Services VPN Issues':
             return <ALLSERVICESVPNISSUESForm resetSelection={resetSelection} />;
-          case 'ALL SERVICES DROPPING PACKETS':
+          case 'All Services Dropping Packets':
             return <ALLSERVICESDROPPINGPACKETSForm resetSelection={resetSelection} />;
-          case 'WIFI CONNECTIVITY ISSUES':
+          case 'WiFi Connectivity Issues':
             return <WiFiConnectivityIssuesForm resetSelection={resetSelection} />;
           case 'DSL Down, Bouncing, or Degraded Sync':
-            return <DSLDownBouncingDegradedSyncForm resetSelection={resetSelection} />;
+            return <DSLDBDForm resetSelection={resetSelection} />;
           case 'DSL Slow Speeds':
             return <DSLSlowSpeedsForm resetSelection={resetSelection} />;
           case 'T1 Down/Bouncing':
@@ -107,8 +116,8 @@ const FormComponent = ({ type, resetSelection }) => {
             return <POTSLinesForm resetSelection={resetSelection} />;
           case 'iPBX Lines':
             return <IPBXLinesForm resetSelection={resetSelection} />;
-          case 'Standard IP Based MPLS':
-            return <StandardIPBasedMPLSForm resetSelection={resetSelection} />;
+          case 'Other Kinds of Issues':
+            return <OtherForms resetSelection={resetSelection} />;
         }
       })()}
     </Box>
